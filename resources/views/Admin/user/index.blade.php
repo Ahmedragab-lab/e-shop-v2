@@ -115,21 +115,17 @@ $(function () {
     $('#saveBtn').click(function (e) {
         e.preventDefault();
         $(this).html('Saving...');
-
-        // var author = $("#author").val();
-        // console.log(author);
         $.ajax({
           data: $('#userForm').serialize(),
           url: "{{ route('user.store') }}",
           type: "POST",
           dataType: 'json',
           success: function (data) {
-
             var show = $('.modal').hasClass('show');
             if(show)
             {
               $(this).on("click", function () {
-                // alertSuccess("Book added successfully.");
+                // alertSuccess("user added successfully.");
                 console.log("clicked on modal");
               });
             }
@@ -138,7 +134,7 @@ $(function () {
                 console.log("modal is closed");
             }
 
-            // alertSuccess("Book added successfully.");
+            // alertSuccess("user added successfully.");
 
               $('#bookForm').trigger("reset");
             //   $('#exampleModal').modal('hide');
