@@ -1,8 +1,8 @@
 
         <!-- jQuery  -->
         <script src="assets/en/js/jquery.min.js"></script>
-        <script src="assets/en/js/bootstrap.bundle.min.js"></script>
         @yield('js')
+        <script src="assets/en/js/bootstrap.bundle.min.js"></script>
         <script src="assets/en/js/modernizr.min.js"></script>
         <script src="assets/en/js/detect.js"></script>
         <script src="assets/en/js/fastclick.js"></script>

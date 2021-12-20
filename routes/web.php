@@ -15,7 +15,6 @@ Route::get('/', function () {
 
 // })
 
-route::resource('dashboard',Admin\DashboardController::class);
-route::resource('user',Admin\UserController::class);
+// route::resource('dashboard',Admin\DashboardController::class);
 
 require __DIR__.'/auth.php';

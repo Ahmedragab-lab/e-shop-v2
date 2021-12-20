@@ -10,7 +10,10 @@
     <!-- morris css -->
     {{-- <link rel="stylesheet" href="{{ asset('assets/plugins/morris/morris.css') }}"> --}}
 
-    @yield('css')
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <link href="{{ asset('assets/en/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/en/css/icons.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/en/css/style.css') }}" rel="stylesheet" type="text/css">
+    @yield('css')
