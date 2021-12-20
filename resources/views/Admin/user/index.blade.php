@@ -14,7 +14,7 @@
         <div class="card m-b-30">
             <div class="card-body">
                 <h4 class="mt-0 header-title">{{ __('user table') }}</h4>
-                
+
                 {{-- <div class="col-md-6 mb-3">
                     <a href="{{ route('user.create') }}"  class="btn btn-primary "><i class="fa fa-user-circle"></i> {{ __('Add User') }}</a>
                 </div> --}}
@@ -110,7 +110,6 @@ $(function () {
         {data: 'DT_RowIndex', name: 'DT_RowIndex'},
         {data: 'name', name: 'name'},
         {data: 'email', name: 'email'},
-        // {data: 'name', name: 'password'},
         {data: 'action', name: 'action', orderable: false, searchable: false},
        ]
     });

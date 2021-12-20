@@ -1,17 +1,17 @@
-{{-- @extends('Admin.dashlayout.master') --}}
+@extends('Admin.dashlayout.master')
 @section('title') mora soft dashboard @endsection
 @section('css')
 
 @endsection
 @section('content')
-{{-- @include('partial.error') --}}
+@include('partial.error')
 <div class="row">
     <div class="col-lg-9">
         <div class="card m-b-30">
             <div class="card-body">
                 <h4 class="mt-0 header-title">{{ __('site.add-admin') }}</h4>
-                <a class="btn btn-primary btn-sm" style="margin: 10px;" href="{{ route('user.index') }}">{{ __('site.back') }} </a>
-                <form class="" action="{{route('user.store')}}" method="post" >
+                <a class="btn btn-primary btn-sm" style="margin: 10px;" href="{{ route('user3.index') }}">{{ __('site.back') }} </a>
+                <form class="" action="{{route('user3.store')}}" method="post" >
                     {{csrf_field()}}
                     <div class="form-group">
                         <label>{{ __('site.name') }}</label>
@@ -20,7 +20,7 @@
                     <div class="form-group">
                         <label>{{ __('site.email') }}</label>
                         <div>
-                            <input type="email" class="form-control" required autocomplete="off"
+                            <input type="email" class="form-control" required
                                    parsley-type="email" placeholder="{{ __('site.enterEmail') }}" name="email"/>
                             @error('email')
                                     <div class="text-warning">{{ $message }}</div>

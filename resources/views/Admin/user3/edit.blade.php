@@ -1,4 +1,8 @@
-@extends('Admin.layouts.master')
+@extends('Admin.dashlayout.master')
+@section('title') mora soft dashboard @endsection
+@section('css')
+
+@endsection
 @section('content')
 @include('partial.error')
 <div class="row">
@@ -6,14 +10,14 @@
         <div class="card m-b-30">
             <div class="card-body">
                 <h4 class="mt-0 header-title">{{ __('site.edit-admin') }}</h4>
-                <a class="btn btn-primary btn-sm" style="margin: 10px;" href="{{ route('admins.index') }}">{{ __('site.back') }}</a>
-                <form class="" action="{{route('admins.update',$Admins->id)}}" method="post" enctype="multipart/form-data">
+                <a class="btn btn-primary btn-sm" style="margin: 10px;" href="{{ route('user3.index') }}">{{ __('site.back') }}</a>
+                <form class="" action="{{route('user3.update',$user->id)}}" method="post" >
                     {{csrf_field()}}
                     @method('PUT')
                     <div class="form-group">
                         <label>{{ __('site.name') }}</label>
                         <input type="text" class="form-control" required  name="name"
-                         value="{{$Admins->name}}" />
+                         value="{{$user->name}}" />
                         {{-- @error('name')
                         <div class="text-warning">{{ $message }}</div>
                         @enderror --}}
@@ -23,7 +27,7 @@
                         <label>{{ __('site.email') }}</label>
                         <div>
                             <input type="email" class="form-control" required
-                                   parsley-type="email"  name="email" value="{{$Admins->email}}"/>
+                                   parsley-type="email"  name="email" value="{{$user->email}}"/>
                             {{-- @error('email')
                                     <div class="text-warning">{{ $message }}</div>
                             @enderror --}}
@@ -33,7 +37,7 @@
                         <label>{{ __('site.password') }}</label>
                         <div>
                             <input type="password" id="pass2" class="form-control" name="password"
-                            value="{{$Admins->password}}"/>
+                            value="{{$user->password}}"/>
                             {{-- @error('password')
                                <div class="text-warning">{{ $message }}</div>
                             @enderror --}}
@@ -48,17 +52,7 @@
                     </div>
 
 
-                    <div class="form-group">
-                        <label>{{ __('site.status') }}</label>
-                        <select name = "admin"  class="form-control "
-                        value="{{ $Admins->status}}"> style="height: calc(2.8rem + 7px);  " >
-                            {{-- <option value="{{ $Admins->status}}"></option> --}}
-
-
-                            <option value="1">{{ __('site.active') }}</option>
-                            <option value="0">{{ __('site.unactive') }}</option>
-                        </select>
-                    </div>
+                    
 
                     <div class="form-group">
                         <div>

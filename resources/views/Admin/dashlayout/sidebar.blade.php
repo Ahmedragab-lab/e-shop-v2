@@ -10,7 +10,10 @@
             </a>
         </li>
         <li>
-            <a href="{{ route('user.index') }}" class="waves-effect"><i class="fa fa-user"></i><span> Users by yagra</span></a>
+            <a href="{{ route('user.index') }}" class="waves-effect"><i class="fa fa-user"></i><span> Users by yagra module</span></a>
+        </li>
+        <li>
+            <a href="{{ route('user3.index') }}" class="waves-effect"><i class="fa fa-user"></i><span> Users by yagra crud </span></a>
         </li>
         <li>
             <a href="{{ route('user2.index') }}" class="waves-effect"><i class="fa fa-user"></i><span> Users crud</span></a>

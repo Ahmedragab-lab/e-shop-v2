@@ -34,25 +34,7 @@ class UserController extends Controller
         }
         return view('Admin.user.index');
     }
-    // public function data()
-    // {
-    //     // $users = User::where('type', 'user')->select();
-    //     $users =  User::latest()->get();
-    //     return DataTables::of($users)
-    //         // ->addColumn('record_select', 'Admin.user.data_table.record_select')
-    //         ->editColumn('created_at', function (User $user) {
-    //             return $user->created_at->format('Y-m-d');
-    //         })
-    //         ->addColumn('actions', 'Admin.user.data_table.actions')
-    //         ->rawColumns(['record_select', 'actions'])
-    //         ->toJson();
-
-    // }// end of data
-    // public function create()
-    // {
-    //     return view('Admin.user.create');
-
-    // }// end of create
+    
     public function store(Request $request)
     {
         // $this->validate($request, [
