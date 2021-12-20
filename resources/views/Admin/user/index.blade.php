@@ -186,37 +186,4 @@ $(function () {
 });
 </script>
 
-{{-- <script>
-
-    let usersTable = $('#users-table').DataTable({
-        dom: "tiplr",
-        serverSide: true,
-        processing: true,
-        // "language": {
-        //     "url": "{{ asset('admin_assets/datatable-lang/' . app()->getLocale() . '.json') }}"
-        // },
-        ajax: {
-            url: '{{ route('data') }}',
-        },
-        columns: [
-            // {data: 'record_select', name: 'record_select', searchable: false, sortable: false, width: '1%'},
-            // {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'name', name: 'name'},
-            {data: 'email', name: 'email'},
-            {data: 'created_at', name: 'created_at', searchable: false},
-            {data: 'actions', name: 'actions', searchable: false, sortable: false, width: '20%'},
-        ],
-        // order: [[2, 'desc']],
-        // drawCallback: function (settings) {
-        //     $('.record__select').prop('checked', false);
-        //     $('#record__select-all').prop('checked', false);
-        //     $('#record-ids').val();
-        //     $('#bulk-delete').attr('disabled', true);
-        // }
-    });
-
-    // $('#data-table-search').keyup(function () {
-    //     usersTable.search(this.value).draw();
-    // })
-</script> --}}
 @endsection

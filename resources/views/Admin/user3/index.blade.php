@@ -6,9 +6,6 @@
 <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 @endsection
 @section('content')
-
-
-
 <div class="row">
     <div class="col-lg-12">
         <div class="card m-b-30">
@@ -18,8 +15,14 @@
                 <div class="col-md-6 mb-3">
                     <a href="{{ route('user3.create') }}"  class="btn btn-primary "><i class="fa fa-user-circle"></i> {{ __('Add User') }}</a>
                 </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" id="data-table-search" class="form-control" autofocus placeholder="@lang('site.search')">
+                    </div>
+                </div>
                 <div class="table-responsive">
-                    <table id="users-table" class="table table-bordered dt-responsive nowrap datatable" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    {{-- <table id="users-table" class="table table-bordered dt-responsive nowrap data-table" style="border-collapse: collapse; border-spacing: 0; width: 100%;"> --}}
+                        <table class="table data-table" id="users-table" style="width: 100%;">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -66,16 +69,16 @@
             {data: 'actions', name: 'actions', searchable: false, sortable: false, width: '20%'},
         ],
         order: [[2, 'desc']],
-        // drawCallback: function (settings) {
-        //     $('.record__select').prop('checked', false);
-        //     $('#record__select-all').prop('checked', false);
-        //     $('#record-ids').val();
-        //     $('#bulk-delete').attr('disabled', true);
-        // }
+    //     drawCallback: function (settings) {
+    //         $('.record__select').prop('checked', false);
+    //         $('#record__select-all').prop('checked', false);
+    //         $('#record-ids').val();
+    //         $('#bulk-delete').attr('disabled', true);
+    //     }
     });
 
-    // $('#data-table-search').keyup(function () {
-    //     usersTable.search(this.value).draw();
-    // })
+    $('#data-table-search').keyup(function () {
+        usersTable.search(this.value).draw();
+    })
 </script>
 @endsection
