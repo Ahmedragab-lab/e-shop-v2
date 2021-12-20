@@ -31,6 +31,7 @@
                                 <th>#</th>
                                 <th>{{ __('name') }}</th>
                                 <th>{{ __('email') }}</th>
+                                <th>{{ __('create_at') }}</th>
                                 <th>{{ __('action') }}</th>
                             </tr>
                         </thead>
@@ -56,8 +57,8 @@
 
     let usersTable = $('#users-table').DataTable({
         // dom: "tiplr",
-        serverSide: true,
         processing: true,
+        serverSide: true,
         // "language": {
         //     "url": "{{ asset('admin_assets/datatable-lang/' . app()->getLocale() . '.json') }}"
         // },
@@ -67,12 +68,13 @@
         columns: [
             // {data: 'record_select', name: 'record_select', searchable: false, sortable: false, width: '1%'},
             // {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+            {data: 'DT_RowIndex', name: 'id'},
             {data: 'name', name: 'name'},
             {data: 'email', name: 'email'},
             {data: 'created_at', name: 'created_at', searchable: false},
             {data: 'actions', name: 'actions', searchable: false, sortable: false, width: '20%'},
         ],
-        order: [[2, 'desc']],
+        // order: [[2, 'desc']],
     //     drawCallback: function (settings) {
     //         $('.record__select').prop('checked', false);
     //         $('#record__select-all').prop('checked', false);
@@ -81,8 +83,8 @@
     //     }
     });
 
-    $('#data-table-search').keyup(function () {
-        usersTable.search(this.value).draw();
-    })
+    // $('#data-table-search').keyup(function () {
+    //     usersTable.search(this.value).draw();
+    // })
 </script>
 @endsection

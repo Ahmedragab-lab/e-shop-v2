@@ -33,26 +33,10 @@
                             @enderror --}}
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label>{{ __('site.password') }}</label>
-                        <div>
-                            <input type="password" id="pass2" class="form-control" name="password"
-                            value="{{$user->password}}"/>
-                            {{-- @error('password')
-                               <div class="text-warning">{{ $message }}</div>
-                            @enderror --}}
-                        </div>
-                        <div class="m-t-10">
-                            <input type="password" class="form-control"
-                                   data-parsley-equalto="#pass2" name="confirm-password" />
-                            {{-- @error('confirm-password')
-                            <div class="text-warning">{{ $message }}</div>
-                            @enderror --}}
-                        </div>
-                    </div>
+                  
 
 
-                    
+
 
                     <div class="form-group">
                         <div>

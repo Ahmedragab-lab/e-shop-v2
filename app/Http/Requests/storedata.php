@@ -18,7 +18,7 @@ class storedata extends FormRequest
             'name' => ['required','min:3','max:100'],
             // 'email' => 'required|email|unique:users',
             // 'password' => 'required|confirmed',
-            'email' => ['required','email', Rule::unique('users')->ignore($this->user)],
+            // 'email' => ['required','email', Rule::unique('users')->ignore($this->user)],
         //     'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         //     'status' => 'required|in:active,unactive',
         //     'email' => ['required','email','unique:users'],

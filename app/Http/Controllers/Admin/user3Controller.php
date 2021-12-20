@@ -3,17 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\storedata;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\Hash;
 class user3Controller extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         return view('admin.user3.index');
@@ -24,12 +21,15 @@ class user3Controller extends Controller
         $users =  User::latest()->select();
         return DataTables::of($users)
             // ->addColumn('record_select', 'Admin.user3.data_table.record_select')
+            ->addIndexColumn()
             ->editColumn('created_at', function (User $user) {
                 return $user->created_at->format('Y-m-d');
             })
             ->addColumn('actions', 'Admin.user3.data_table.actions')
-            ->rawColumns(['record_select', 'actions'])
-            ->toJson();
+            // ->rawColumns(['record_select', 'actions'])
+            ->rawColumns(['actions'])
+            // ->toJson();
+            ->make(true);
 
     }// end of data
     public function create()
@@ -38,12 +38,12 @@ class user3Controller extends Controller
 
     }// end of create
 
-    public function store(Request $request)
+    public function store(storedata $request)
     {
-        // $requestData = $request->validated();
-        // $requestData['password'] = bcrypt($request->password);
+        $requestData = $request->validated();
+        $requestData['password'] = bcrypt($request->password);
 
-        User::create($request->all());
+        User::create($requestData);
 
         toastr()->success(__('user create successfully'));
         return redirect()->route('user3.index');
@@ -67,27 +67,24 @@ class user3Controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(storedata $request, $id)
     {
         try{
-
-
             $data = User::findorfail($id);
             $data->name = $request->name;
             if($data->email != $request->email){
-                    $this->validate($request,[
-                            'email' => ['required','unique:users'],
-                        ]);
-                        $data->email = $request->email;
-                    }
-            $data->password = Hash::make($request->password);
+                $this->validate($request,[
+                        'email' => ['required','unique:users'],
+                    ]);
+                    $data->email = $request->email;
+            }
             $data->update();
             toastr()->success(__('user update successfully'));
             return redirect()->route('user3.index');
 
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
-         }
+        }
     }
 
     /**
