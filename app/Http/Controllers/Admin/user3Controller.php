@@ -23,7 +23,7 @@ class user3Controller extends Controller
     {
         $users =  User::latest()->select();
         return DataTables::of($users)
-            ->addColumn('record_select', 'Admin.user3.data_table.record_select')
+            // ->addColumn('record_select', 'Admin.user3.data_table.record_select')
             ->editColumn('created_at', function (User $user) {
                 return $user->created_at->format('Y-m-d');
             })
