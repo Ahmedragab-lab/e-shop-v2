@@ -10,7 +10,10 @@
             </a>
         </li>
         <li>
-            <a href="{{ route('user.index') }}" class="waves-effect"><i class="fa fa-user"></i><span> Users</span></a>
+            <a href="{{ route('user.index') }}" class="waves-effect"><i class="fa fa-user"></i><span> Users by yagra</span></a>
+        </li>
+        <li>
+            <a href="{{ route('user2.index') }}" class="waves-effect"><i class="fa fa-user"></i><span> Users crud</span></a>
         </li>
 
         <li class="has_sub">
